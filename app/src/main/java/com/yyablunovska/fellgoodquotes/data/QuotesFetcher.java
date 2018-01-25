@@ -25,7 +25,7 @@ public class QuotesFetcher {
     private final List<Quote> mQuoteList = new ArrayList<>();
 
     public List<Quote> getQuotes(IQuoteListAsyncResponse callBack) {
-        final String url = "https://raw.githubusercontent.com/pdichone/UIUX-Android-Course/master/Quotes.json%20";
+        final String url = "https://raw.githubusercontent.com/bookdreamer/feel-good-quotes/master/Quotes.json";
 
         final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url,
                 response -> {
