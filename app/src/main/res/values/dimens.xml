@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_min_height">160dp</dimen>
+    <dimen name="cardview_side_margin">30dp</dimen>
+    <dimen name="cardview_padding">10dp</dimen>
+    <dimen name="elevation">6dp</dimen>
+
+    <dimen name="author_text_size">24sp</dimen>
+</resources>

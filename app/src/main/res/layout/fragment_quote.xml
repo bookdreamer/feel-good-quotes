@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/cardview_min_height"
+        android:layout_marginStart="@dimen/cardview_side_margin"
+        android:layout_marginEnd="@dimen/cardview_side_margin"
+        android:layout_centerHorizontal="true"
+        app:contentPadding="@dimen/cardview_padding"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardElevation="@dimen/elevation" >
+
+        <TextView
+            android:id="@+id/quote_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            tools:text="Some very very useful and motivating quote from some smart guy." />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation"
+        android:layout_alignEnd="@+id/card_view"
+        android:layout_alignRight="@+id/card_view"
+        android:layout_below="@+id/card_view"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:textSize="@dimen/author_text_size"
+        android:textColor="@color/author_text_color"
+        tools:text="Albert Einstein" />
+
+</RelativeLayout>
