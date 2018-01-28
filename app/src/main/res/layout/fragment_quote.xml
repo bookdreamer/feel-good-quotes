@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
@@ -42,5 +41,16 @@
         android:textSize="@dimen/author_text_size"
         android:textColor="@color/author_text_color"
         tools:text="Albert Einstein" />
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/author_name"
+        android:layout_alignBottom="@+id/author_name"
+        android:layout_alignLeft="@+id/card_view"
+        android:layout_alignStart="@+id/card_view"
+        android:alpha="0.5"
+        android:src="@drawable/share" />
 
 </RelativeLayout>
