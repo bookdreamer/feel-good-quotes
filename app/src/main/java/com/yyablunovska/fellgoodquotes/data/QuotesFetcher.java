@@ -24,10 +24,10 @@ public class QuotesFetcher {
 
     private final List<Quote> mQuoteList = new ArrayList<>();
 
-    public List<Quote> getQuotes(IQuoteListAsyncResponse callBack) {
+    public List<Quote> getQuotes(String requestTag, IQuoteListAsyncResponse callBack) {
         final String url = "https://raw.githubusercontent.com/bookdreamer/feel-good-quotes/master/Quotes.json";
 
-        final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url,
+        final JsonArrayRequest quotesJsonRequest = new JsonArrayRequest(url,
                 response -> {
                     for (int i = 0; i < response.length(); i++) {
                         try {
@@ -37,17 +37,18 @@ public class QuotesFetcher {
                             quote.setAuthor(quoteObject.getString(NAME_KEY));
                             mQuoteList.add(quote);
                         } catch (JSONException e) {
-                            Log.e(TAG, "Error during request to " + url + ": " + e);
+                            Log.e(TAG, "Error during parsing JSON received from " + url + ": " + e);
                         }
                     }
 
                     if (callBack != null) {
-                        Log.d("Test", "got quotes: " + mQuoteList.size());
+                        Log.d(TAG, "Got quotes: " + mQuoteList.size());
                         callBack.processFinished(mQuoteList);
                     }
 
-                }, error -> Log.d("Test", "some error on query: " + error));
-        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
+                }, error -> Log.d(TAG, "Some error appeared on query url " + url + ": " + error));
+        quotesJsonRequest.setTag(requestTag);
+        AppController.getInstance().addToRequestQueue(quotesJsonRequest);
 
         return mQuoteList;
     }
